@@ -30,6 +30,6 @@ app.use('/api/auth', auth);
 
 /* PORT */
 const PORT = process.env.PORT || 8080;
-db.sequelize.sync({   /* force: true */   }).then(function(){
+db.sequelize.sync({ /* force: true */ }).then(function(){
   app.listen(PORT, () => { console.log(`Server is running on port ${PORT}.`); });
 })

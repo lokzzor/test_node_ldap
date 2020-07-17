@@ -31,9 +31,16 @@ db.user = require('../models/user.js')(sequelize, Sequelize);
 db.event = require('../models/event.js')(sequelize, Sequelize);
 db.room = require('../models/room.js')(sequelize, Sequelize);
 db.dictionary = require('../models/event_dictionary.js')(sequelize, Sequelize);
-db.room.belongsTo(db.event, {
+db.event.belongsTo(db.room, {
   through: "room_name",
   foreignKey: "room_name",
 });
-
+db.event.belongsTo(db.user, {
+  through: "person_id",
+  foreignKey: "person_id",
+});
+db.event.belongsTo(db.user, {
+  through: "is_admin",
+  foreignKey: "admin_id",
+});
 module.exports = db;
