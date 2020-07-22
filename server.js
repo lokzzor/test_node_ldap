@@ -27,6 +27,8 @@ app.get("/", (req, res) => {
 const auth = require('./app/routes/auth.routes');
 app.use('/api/auth', auth); 
 
+const first = require('./app/routes/first');
+app.use('/api/get', first); 
 
 /* PORT */
 const PORT = process.env.PORT || 8080;

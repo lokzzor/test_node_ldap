@@ -1,7 +1,7 @@
 module.exports = (sequelize, Sequelize) => {
 	const Room = sequelize.define('room_', {
     room_name: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         primaryKey: true,
         allowNull: false,
         unique: true
